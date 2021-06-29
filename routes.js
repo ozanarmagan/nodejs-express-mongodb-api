@@ -11,7 +11,11 @@ var userController = require('./controllers/userController');
 
 router.route('/users')
     .get(userController.index)
-    .post(userController.new);
+    .post(userController.register);
+
+router.route('/login')
+    .get(userController.login)
+    .post(userController.login);
 
 router.route('/users/:user_id')
     .get(userController.view)
